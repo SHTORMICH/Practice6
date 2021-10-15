@@ -8,7 +8,8 @@ Notes.
 
 (1) Everywhere in the code, when implementing functional interfaces, use lambda expressions or method references.
 
-(2) Remember that the containers HashSet/ТгееSet do not track potential occurrence of duplicates on changing the state of the objects that these containers store. The same concerns the keys of HashMap/ТгееМар containers.
+(2) Remember that the containers HashSet/ТгееSet do not track potential occurrence of duplicates on changing the state 
+of the objects that these containers store. The same concerns the keys of HashMap/ТгееМар containers.
 
 (3) In the task 6, a ‘word’ should be considered a continuous sequence of Latin letters.
 
@@ -30,15 +31,18 @@ Word - is set in correspondence to a model ‘a word with information about its 
 
 ———————————————————————————————-
 
-Develop an application that reads text from console input and displays words in decreasing order of frequency of their occurrence in the text (if the frequencies coincide, the order is lexicographical). A ‘word’ should be considered a continuous sequence of non-whitespace characters.
+Develop an application that reads text from console input and displays words in decreasing order of frequency of their 
+occurrence in the text (if the frequencies coincide, the order is lexicographical). A ‘word’ should be considered a 
+continuous sequence of non-whitespace characters.
 
 Solve the task using the OOP approach.
 
- The Word class, which contains a string field named ‘content’ and the integer field named ‘frequency’, the WordContainer container aggregates Word objects.
+The Word class, which contains a string field named ‘content’ and the integer field named ‘frequency’, the WordContainer container aggregates Word objects.
 
 When using container core classes, correctly implement (in case of need) the methods Word#equals / Word#hashCode / Word#compareTo.
 
-When starting, WordContainer.main reads from the standard input stream (console). Console input generally may contain several lines, each line may contain several words. The word ‘stop’ is a sign of console input end.  
+When starting, WordContainer.main reads from the standard input stream (console). Console input generally may contain 
+several lines, each line may contain several words. The word ‘stop’ is a sign of console input end.  
 
 Demonstrate the functionality of the application (Part1.main).  
 
@@ -416,7 +420,8 @@ When deleting an element, stick to the following algorithm.
 
 3. If the node has two child nodes, then you need to 3.1. find the element following it (this element will not have a right descendant)  3.2. place its left descendant in the place of the found element  3.3. replace the deleted node with the found node.
 
-Visual image of the algorithm (in the picture the tree is “turned upside down”): <a href=‘https://neerc.ifmo.ru/wiki/images/thumb/a/ab/Bst_del1.png/581px-Bst_del1.png'>algorithm.png</a>
+Visual image of the algorithm (in the picture the tree is “turned upside down”):
+ <a href=‘https://neerc.ifmo.ru/wiki/images/thumb/a/ab/Bst_del1.png/581px-Bst_del1.png'>algorithm.png</a>
 
 _______________________
 
@@ -483,7 +488,8 @@ Subtask Part 1 (frequency)
 Class name: com.epam.rd.java.basic.practice6.Part61
 ———————————————————————————————-
 
-In the input file, find the three words that occur most often (if the frequencies coincide, choose that that occurs earlier), and print them sorted alphabetically in reverse order, in the format: word ==> frequency
+In the input file, find the three words that occur most often (if the frequencies coincide, choose that
+ that occurs earlier), and print them sorted alphabetically in reverse order, in the format: word ==> frequency
 
 Output example:
 
@@ -504,7 +510,8 @@ Subtask Part 2 (length)
 Class name: com.epam.rd.java.basic.practice6.part6.Part62
 ———————————————————————————————-
 
-Find the three longest words in the input file and print them out in the format: word ==> the quantity of the letters in the word. The list should be sorted in descending order of the letters quantity in the word.  
+Find the three longest words in the input file and print them out in the format: word ==> the quantity of the letters in the word. 
+The list should be sorted in descending order of the letters quantity in the word.  
 
 If two words have the same quantity of the letters, then the word that occurred in the source file earlier should also be earlier in the resulting list.
 

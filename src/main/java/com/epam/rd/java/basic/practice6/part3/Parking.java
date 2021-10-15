@@ -1,21 +1,53 @@
 package com.epam.rd.java.basic.practice6.part3;
 
 public class Parking {
-    
-     public Parking(int capacity) {
+    private final int[] arr;
 
+    public Parking(int capacity) {
+        arr = new int[capacity];
     }
-    
+
     public boolean arrive(int k) {
-        return false;
-        
+         if (k < 0 || k > arr.length - 1) {
+             throw new IllegalArgumentException();
+         }
+         int start = k;
+         while (arr[k] != 0) {
+             k = (k + 1) % arr.length;
+             if (k == start) {
+                 System.out.println(printArr(arr) + ", false");
+                 return false;
+             }
+         }
+         arr[k] = 1;
+        System.out.println(printArr(arr) + ", true");
+         return true;
     }
-    
+
     public boolean depart(int k) {
+        if (k < 0 || k > arr.length - 1) {
+            throw new IllegalArgumentException();
+        }
+        if (arr[k] == 1) {
+            arr[k] = 0;
+            System.out.println(printArr(arr) + ", true");
+            return true;
+        }
+        System.out.println(printArr(arr) + ", false");
         return false;
     }
     
     public void print() {
-        
+        for (int el : arr) {
+            System.out.print(el);
+        }
+    }
+
+    public static String printArr(int[] arr) {
+        StringBuilder text = new StringBuilder();
+        for (int el : arr) {
+            text.append(el);
+        }
+        return text.toString();
     }
 }
