@@ -26,7 +26,7 @@ public class Part61{
                         (e1, e2) -> e2, LinkedHashMap::new));
         int counter = 0;
         for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
-            System.out.println(entry.getKey() + " ==> " + entry.getValue());
+            System.out.println(entry.getKey() + " ==> " + entry.getValue() + "\n");
             counter++;
             if (counter == 3) {
                 break;

@@ -22,7 +22,7 @@ public class Part62 {
         words.sort(Comparator.comparing(String::length).reversed());
         for (int i = 0; i < 3; i++) {
             int finalI = i;
-            System.out.println(words.get(finalI) + " ==> " + words.get(finalI).length());
+            System.out.println(words.get(finalI) + " ==> " + words.get(finalI).length() + "\n");
         }
     }
 

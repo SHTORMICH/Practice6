@@ -35,7 +35,7 @@ public class Part63{
             for (int i = charArray.length - 1; i >= 0; i--) {
                 resultWord.append(charArray[i]);
             }
-            System.out.println(resultWord);
+            System.out.println(resultWord.append(System.lineSeparator()));
         }
     }
 
