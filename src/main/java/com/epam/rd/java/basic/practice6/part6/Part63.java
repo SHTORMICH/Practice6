@@ -7,10 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Part63{
     String pathToFile;
+    private static final Logger logger = Logger.getLogger(Part63.class.getName());
 
     public Part63(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -27,8 +30,12 @@ public class Part63{
                 .collect(Collectors.toList());
         Collections.reverse(result);
         for (String word : result) {
-            System.out.println(word);
-            System.out.println();
+            char[] charArray = word.toCharArray();
+            StringBuilder resultWord = new StringBuilder();
+            for (int i = charArray.length - 1; i >= 0; i--) {
+                resultWord.append(charArray[i]);
+            }
+            logger.log(Level.INFO, resultWord::toString);
         }
     }
 

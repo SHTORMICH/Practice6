@@ -1,9 +1,12 @@
 package com.epam.rd.java.basic.practice6.part1;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class WordContainer {
+	private static final Logger logger = Logger.getLogger(WordContainer.class.getName());
 	
 	public static void main(String[] args) {
 		List<String> text = readerFromConsole();
@@ -16,7 +19,7 @@ public class WordContainer {
 				.collect(Collectors.toList());
 
 		for (Word word : list) {
-			System.out.println(word.getContent() + " = " + word.getFrequency());
+			logger.log(Level.INFO, () -> word.getContent() + " : " + word.getFrequency());
 		}
 
 	}

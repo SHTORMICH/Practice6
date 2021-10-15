@@ -4,54 +4,64 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Part2 {
+    private List<Integer> list;
+    private List<Integer> linkedList;
+    private static final int SIZE_LIST = 10000;
+    private static final Logger logger = Logger.getLogger(Part2.class.getName());
 
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        List<Integer> linkedList = new LinkedList<>();
-        int k = 4;
-
-        for (int i = 0; i < 10000; i++) {
-            list.add(i);
+    public List<Integer> getLinkedList() {
+        linkedList = new LinkedList<>();
+        for (int i = 0; i < SIZE_LIST; i++) {
             linkedList.add(i);
         }
+        return new LinkedList<>(linkedList);
+    }
 
-        long startTime = System.currentTimeMillis();
-        removeByIndex(list, k);
-        long endTime = System.currentTimeMillis() - startTime;
+    public void setLinkedList() {
+        this.linkedList = new LinkedList<>();
+    }
 
-        System.out.println("ArrayList#Index: " + endTime + " ms");
+    public List<Integer> getList() {
+        list = new LinkedList<>();
+        for (int i = 0; i < SIZE_LIST; i++) {
+            list.add(i);
+        }
+        return new LinkedList<>(list);
+    }
 
-        long startTimeL = System.currentTimeMillis();
-        removeByIndex(linkedList, k);
-        long endTimeL = System.currentTimeMillis() - startTimeL;
+    public void setList() {
+        this.list = new ArrayList<>();
+    }
 
-        System.out.println("LinkedList#Index: " + endTimeL + " ms");
+    public static void main(String[] args) {
+        Part2 part2 = new Part2();
+        int k = 4;
 
-        long startTimeI = System.currentTimeMillis();
-        removeByIterator(list, k);
-        long endTimeI = System.currentTimeMillis() - startTimeI;
+        logger.log(Level.INFO,() -> "ArrayList#Index: " + removeByIndex(part2.getList(), k) + " ms");
 
-        System.out.println("ArrayList#Iterator: " + endTimeI + " ms");
+        logger.log(Level.INFO,() -> "LinkedList#Index: " + removeByIndex(part2.getLinkedList(), k) + " ms");
 
-        long startTimeLI = System.currentTimeMillis();
-        removeByIterator(linkedList, k);
-        long endTimeLI = System.currentTimeMillis() - startTimeLI;
+        logger.log(Level.INFO,() -> "ArrayList#Iterator: " + removeByIndex(part2.getList(), k) + " ms");
 
-        System.out.println("LinkedList#Iterator " + endTimeLI + " ms");
+        logger.log(Level.INFO,() -> "LinkedList#Iterator: " + removeByIndex(part2.getLinkedList(), k) + " ms");
     }
 
     public static long removeByIndex(final List<Integer> list, final int k) {
+        long startTime = System.currentTimeMillis();
         int index = 0;
         while (list.size() != 1) {
             index = (index + k - 1) % list.size();
             list.remove(index);
         }
-        return list.get(0);
+        return System.currentTimeMillis() - startTime;
     }
 
     public static long removeByIterator(final List<Integer> list, int k) {
+        long startTime = System.currentTimeMillis();
         Iterator<Integer> iterator = list.iterator();
         int counter = 0;
         while (list.size() != 1) {
@@ -66,6 +76,6 @@ public class Part2 {
                 iterator = list.iterator();
             }
         }
-        return list.get(0);
+        return System.currentTimeMillis() - startTime;
     }
 }

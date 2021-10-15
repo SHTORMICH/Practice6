@@ -23,7 +23,7 @@ public class Range implements Iterable<Integer>{
         for (int i = firstBound; i < secBound + 1; i++) {
             arr[j++] = i;
         }
-        if (reversedOrder == true) {
+        if (reversedOrder) {
             arr2 = IntStream.range(0, arr.length).map(i -> arr[arr.length - i - 1]).toArray();
         }
         arr = arr2;
