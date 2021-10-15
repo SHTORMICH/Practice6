@@ -2,10 +2,13 @@ package com.epam.rd.java.basic.practice6.part6;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Part61{
     String pathToFile;
+    private static final Logger logger = Logger.getLogger(Part61.class.getName());
 
     public Part61(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -23,7 +26,7 @@ public class Part61{
                         (e1, e2) -> e2, LinkedHashMap::new));
         int counter = 0;
         for (Map.Entry<String, Long> entry : hashMap.entrySet()) {
-            System.out.println(entry.getKey() + " ==> " + entry.getValue());
+            logger.log(Level.INFO, () -> entry.getKey() + " ==> " + entry.getValue());
             counter++;
             if (counter == 3) {
                 break;
