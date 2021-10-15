@@ -1,6 +1,7 @@
 package com.epam.rd.java.basic.practice6.part4;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.stream.IntStream;
 
 public class Range implements Iterable<Integer>{
@@ -43,6 +44,9 @@ public class Range implements Iterable<Integer>{
 
         @Override
         public Integer next() {
+            if(!hasNext()){
+                throw new NoSuchElementException();
+            }
             return arr[index++];
         }
         

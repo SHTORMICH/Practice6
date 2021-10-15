@@ -5,12 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Part62 {
     String pathToFile;
-    //private static final Logger logger = Logger.getLogger(Part62.class.getName());
+    private static final Logger logger = Logger.getLogger(Part62.class.getName());
 
     public Part62(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -21,8 +20,7 @@ public class Part62 {
         List<String> words = reader(file);
         words.sort(Comparator.comparing(String::length).reversed());
         for (int i = 0; i < 3; i++) {
-            int finalI = i;
-            System.out.println(words.get(finalI) + " ==> " + words.get(finalI).length() + "\n");
+            System.out.println(words.get(i) + " ==> " + words.get(i).length());
         }
     }
 
@@ -35,7 +33,7 @@ public class Part62 {
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warning("IOException");
         }
         return words;
     }

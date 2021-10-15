@@ -1,11 +1,7 @@
 package com.epam.rd.java.basic.practice6.part3;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Parking {
     private final int[] arr;
-    //private static final Logger logger = Logger.getLogger(Parking.class.getName());
 
     public Parking(int capacity) {
         arr = new int[capacity];

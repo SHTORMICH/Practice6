@@ -5,7 +5,6 @@ public class Tree<E extends Comparable<E>>{
     private Node<E> parent;
     private Node<E> current;
     private static final String INDENT = "  ";
-    //private static final Logger logger = Logger.getLogger(Tree.class.getName());
 
     public void setParent(Node<E> parent) {
         this.parent = parent;

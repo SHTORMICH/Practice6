@@ -1,10 +1,20 @@
 package com.epam.rd.java.basic.practice6.part6;
 
+import java.util.Scanner;
+
 public class Part6 {
     //private static final Logger logger = Logger.getLogger(Part6.class.getName());
 
     public static void main(String[] args) {
-        new Part6().inputFromConsole(args[0], args[1], args[2], args[3]);
+        Scanner scanner = new Scanner(System.in);
+        String[] inputTextFromConsole = new String[4];
+        String input = scanner.nextLine();
+        int i = 0;
+        while (input.equals(System.lineSeparator())) {
+            inputTextFromConsole[i++] = input;
+            input = scanner.nextLine();
+        }
+        new Part6().inputFromConsole(inputTextFromConsole[0], inputTextFromConsole[1], inputTextFromConsole[2], inputTextFromConsole[3]);
 
     }
     private boolean inputFromConsole(String input, String fileName, String task, String operation) {

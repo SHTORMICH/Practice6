@@ -2,8 +2,7 @@ package com.epam.rd.java.basic.practice6.part5;
 
 public class Part5 {
     private static final String SEPARATOR = "~~~~~~~";
-    //private static final Logger logger = Logger.getLogger(Part5.class.getName());
-    
+
     public static void main(String[] args) {
         Tree<Integer> tree = new Tree<>();
 

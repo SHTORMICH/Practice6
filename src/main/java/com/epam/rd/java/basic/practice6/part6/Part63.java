@@ -7,13 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Part63{
     String pathToFile;
-    //private static final Logger logger = Logger.getLogger(Part63.class.getName());
+    private static final Logger logger = Logger.getLogger(Part63.class.getName());
 
     public Part63(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -35,7 +34,7 @@ public class Part63{
             for (int i = charArray.length - 1; i >= 0; i--) {
                 resultWord.append(charArray[i]);
             }
-            System.out.println(resultWord.append(System.lineSeparator()));
+            System.out.println(resultWord);
         }
     }
 
@@ -48,7 +47,7 @@ public class Part63{
                 value = reader.readLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.warning("IOException");
         }
         return words;
     }
