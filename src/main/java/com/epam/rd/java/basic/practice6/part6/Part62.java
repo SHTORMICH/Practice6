@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Part62 {
     String pathToFile;
-    private static final Logger logger = Logger.getLogger(Part62.class.getName());
+    //private static final Logger logger = Logger.getLogger(Part62.class.getName());
 
     public Part62(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -22,7 +22,7 @@ public class Part62 {
         words.sort(Comparator.comparing(String::length).reversed());
         for (int i = 0; i < 3; i++) {
             int finalI = i;
-            logger.log(Level.INFO, () -> words.get(finalI) + " ==> " + words.get(finalI).length());
+            System.out.println(words.get(finalI) + " ==> " + words.get(finalI).length());
         }
     }
 

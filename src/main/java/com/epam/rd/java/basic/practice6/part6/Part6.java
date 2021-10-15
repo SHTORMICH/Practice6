@@ -1,10 +1,7 @@
 package com.epam.rd.java.basic.practice6.part6;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Part6 {
-    private static final Logger logger = Logger.getLogger(Part6.class.getName());
+    //private static final Logger logger = Logger.getLogger(Part6.class.getName());
 
     public static void main(String[] args) {
         new Part6().inputFromConsole(args[0], args[1], args[2], args[3]);
@@ -12,26 +9,23 @@ public class Part6 {
     }
     private boolean inputFromConsole(String input, String fileName, String task, String operation) {
         if (!("--input".equals(input) || ("-i".equals(input)))) {
-            logger.warning("Wrong input");
+            System.err.println("Wrong input");
         }
         if (!("--task".equals(task) || ("-t".equals(task)))) {
-            logger.warning("Wrong task");
+            System.err.println("Wrong task");
         }
         switch (operation) {
             case "frequency":
-                Part61 frequency = new Part61(fileName);
-                logger.log(Level.INFO, () -> frequency + "");
+                new Part61(fileName);
                 break;
             case "length":
-                Part62 length = new Part62(fileName);
-                logger.log(Level.INFO, () -> length + "");
+                new Part62(fileName);
                 break;
             case "duplicates":
-                Part63 duplicates = new Part63(fileName);
-                logger.log(Level.INFO, () -> duplicates + "");
+                new Part63(fileName);
                 break;
             default:
-                logger.warning("Wrong method!");
+                System.err.println("Wrong method!");
                 return false;
         }
         return true;

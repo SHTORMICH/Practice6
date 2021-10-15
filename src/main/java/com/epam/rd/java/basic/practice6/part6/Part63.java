@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class Part63{
     String pathToFile;
-    private static final Logger logger = Logger.getLogger(Part63.class.getName());
+    //private static final Logger logger = Logger.getLogger(Part63.class.getName());
 
     public Part63(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -35,7 +35,7 @@ public class Part63{
             for (int i = charArray.length - 1; i >= 0; i--) {
                 resultWord.append(charArray[i]);
             }
-            logger.log(Level.INFO, resultWord::toString);
+            System.out.println(resultWord);
         }
     }
 

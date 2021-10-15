@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class WordContainer {
-	private static final Logger logger = Logger.getLogger(WordContainer.class.getName());
+	//private static final Logger logger = Logger.getLogger(WordContainer.class.getName());
 	
 	public static void main(String[] args) {
 		List<String> text = readerFromConsole();
@@ -19,7 +19,7 @@ public class WordContainer {
 				.collect(Collectors.toList());
 
 		for (Word word : list) {
-			logger.log(Level.INFO, () -> word.getContent() + " : " + word.getFrequency());
+			System.out.println(word.getContent() + " : " + word.getFrequency());
 		}
 
 	}

@@ -1,14 +1,11 @@
 package com.epam.rd.java.basic.practice6.part5;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Tree<E extends Comparable<E>>{
     private Node<E> root;
     private Node<E> parent;
     private Node<E> current;
     private static final String INDENT = "  ";
-    private static final Logger logger = Logger.getLogger(Tree.class.getName());
+    //private static final Logger logger = Logger.getLogger(Tree.class.getName());
 
     public void setParent(Node<E> parent) {
         this.parent = parent;
@@ -124,7 +121,7 @@ public class Tree<E extends Comparable<E>>{
             return;
         }
         print(current.left, indent + INDENT);
-        logger.log(Level.INFO, () -> indent + current.element);
+        System.out.println(indent + current.element);
         print(current.right, indent + INDENT);
     }
  
