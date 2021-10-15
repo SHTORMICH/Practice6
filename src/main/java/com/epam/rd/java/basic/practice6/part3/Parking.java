@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class Parking {
     private final int[] arr;
-    private static final Logger logger = Logger.getLogger(Parking.class.getName());
+    //private static final Logger logger = Logger.getLogger(Parking.class.getName());
 
     public Parking(int capacity) {
         arr = new int[capacity];
@@ -19,12 +19,12 @@ public class Parking {
          while (arr[k] != 0) {
              k = (k + 1) % arr.length;
              if (k == start) {
-                 logger.log(Level.INFO, () -> printArr(arr) + ", false");
+                 System.out.println(printArr(arr) + ", false");
                  return false;
              }
          }
          arr[k] = 1;
-        logger.log(Level.INFO, () -> printArr(arr) + ", true");
+        System.out.println(printArr(arr) + ", true");
          return true;
     }
 
@@ -34,10 +34,10 @@ public class Parking {
         }
         if (arr[k] == 1) {
             arr[k] = 0;
-            logger.log(Level.INFO, () -> printArr(arr) + ", true");
+            System.out.println(printArr(arr) + ", true");
             return true;
         }
-        logger.log(Level.INFO, () -> printArr(arr) + ", false");
+        System.out.println(printArr(arr) + ", false");
         return false;
     }
     
@@ -46,7 +46,7 @@ public class Parking {
         for (int el : arr) {
             text.append(el);
         }
-        logger.log(Level.INFO, text::toString);
+        System.out.println(text);
     }
 
     public static String printArr(int[] arr) {
