@@ -10,25 +10,29 @@ public class Range implements Iterable<Integer>{
 
     public Range(int n, int m) {
         this(n, m, false);
-        arr = new int[m - n + 1];
-        int j = 0;
-        for (int i = n; i < m + 1; i++) {
-            arr[j++] = i;
-        }
+        arr = createArray(n, m, false);
     }
 
     public Range(int firstBound, int secBound, boolean reversedOrder) {
-        arr = new int[secBound - firstBound + 1];
-        int[] arr2 = new int[arr.length];
+        arr = createArray(firstBound, secBound, reversedOrder);
+    }
+
+    public int[] createArray(int n, int m, boolean reversedOrder) {
+        int[] array = new int[m - n + 1];
         int j = 0;
-        for (int i = firstBound; i < secBound + 1; i++) {
-            arr[j++] = i;
+        for (int i = n; i < m + 1; i++) {
+            array[j++] = i;
         }
         if (reversedOrder) {
-            arr2 = IntStream.range(0, arr.length).map(i -> arr[arr.length - i - 1]).toArray();
+            return reverseArray(array);
         }
-        arr = arr2;
+        return array;
     }
+
+    private int[] reverseArray(int[] arr) {
+        return IntStream.range(0, arr.length).map(i -> arr[arr.length - i - 1]).toArray();
+    }
+
     
     @Override
     public Iterator<Integer> iterator() {
@@ -49,7 +53,5 @@ public class Range implements Iterable<Integer>{
             }
             return arr[index++];
         }
-        
     }
-
 }

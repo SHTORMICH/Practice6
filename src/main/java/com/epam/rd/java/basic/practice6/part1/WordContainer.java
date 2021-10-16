@@ -11,7 +11,6 @@ public class WordContainer {
 		for (Word word : list) {
 			System.out.println(word.getContent() + " : " + word.getFrequency());
 		}
-
 	}
 
 	public static List<Word> sortAndCountWords(List<String> text) {

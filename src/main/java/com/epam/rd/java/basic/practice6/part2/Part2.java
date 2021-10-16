@@ -45,9 +45,9 @@ public class Part2 {
 
         logger.log(Level.INFO,() -> "LinkedList#Index: " + removeByIndex(part2.getLinkedList(), k) + " ms");
 
-        logger.log(Level.INFO,() -> "ArrayList#Iterator: " + removeByIndex(part2.getList(), k) + " ms");
+        logger.log(Level.INFO,() -> "ArrayList#Iterator: " + removeByIterator(part2.getList(), k) + " ms");
 
-        logger.log(Level.INFO,() -> "LinkedList#Iterator: " + removeByIndex(part2.getLinkedList(), k) + " ms");
+        logger.log(Level.INFO,() -> "LinkedList#Iterator: " + removeByIterator(part2.getLinkedList(), k) + " ms");
     }
 
     public static long removeByIndex(final List<Integer> list, final int k) {
