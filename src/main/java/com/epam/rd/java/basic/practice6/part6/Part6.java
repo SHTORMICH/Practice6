@@ -1,10 +1,21 @@
 package com.epam.rd.java.basic.practice6.part6;
 
+import java.util.Scanner;
+
 public class Part6 {
-    private String[] input;
 
     public static void main(String[] args) {
-        new Part6().inputFromConsole(args[0], args[1], args[2], args[3]);
+        StringBuilder input = new StringBuilder();
+        Scanner scanner = new Scanner(System.in);
+        String command = scanner.nextLine();
+        input.append(command).append(" ");
+        for (int i = 0; i < 3; i++) {
+            command = scanner.nextLine();
+            input.append(command).append(" ");
+        }
+        String[] text = input.toString().split(" ");
+        new Part6().inputFromConsole(text[0], text[1], text[2], text[3]);
+
     }
 
     private boolean inputFromConsole(String input, String fileName, String task, String operation) {
@@ -21,10 +32,10 @@ public class Part6 {
                 new Part61(fileName);
                 break;
             case "length":
-                System.out.println(new Part62(fileName));
+                new Part62(fileName);
                 break;
             case "duplicates":
-                System.out.println(new Part63(fileName));
+                new Part63(fileName);
                 break;
             default:
                 System.err.println("Wrong method!");
