@@ -15,7 +15,7 @@ public class Part61{
 
     public static void main(String[] args) {
         File file = new File("part6.txt");
-        List<String> words = reader(file);
+        List<String> words = readerP61(file);
         Map<String, Long> hashMap = words.stream()
                 .collect(Collectors.groupingBy(w -> w,Collectors.counting()))
                 .entrySet().stream()
@@ -33,7 +33,7 @@ public class Part61{
         }
     }
 
-    public static List<String> reader(File file) {
+    public static List<String> readerP61(File file) {
         List<String> words = new ArrayList<>();
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String value = reader.readLine();

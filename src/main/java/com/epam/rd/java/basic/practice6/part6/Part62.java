@@ -17,14 +17,14 @@ public class Part62 {
 
     public static void main(String[] args) {
         File file = new File("part6.txt");
-        List<String> words = reader(file);
+        List<String> words = readerP62(file);
         words.sort(Comparator.comparing(String::length).reversed());
         for (int i = 0; i < 3; i++) {
             System.out.println(words.get(i) + " ==> " + words.get(i).length());
         }
     }
 
-    public static List<String> reader(File file) {
+    public static List<String> readerP62(File file) {
         List<String> words = new ArrayList<>();
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String value = reader.readLine();

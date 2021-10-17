@@ -1,9 +1,7 @@
 package com.epam.rd.java.basic.practice6.part2;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,37 +9,37 @@ import java.util.List;
 public class Part2Test {
     @Test
     public void testArray_removeByIndex() {
-        List<Integer> listActual = new ArrayList<>();
+        List<Integer> listExpected = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {
-            listActual.add(i);
+            listExpected.add(i);
         }
-        Assert.assertTrue(Part2.removeByIndex(listActual, 3) > 10);
+        Assert.assertTrue(Part2.removeByIndex(listExpected, 3) < 10);
     }
 
     @Test
     public void testLinkedList_removeByIndex() {
-        List<Integer> linkedListActual = new LinkedList<>();
+        List<Integer> linkedListExpected = new LinkedList<>();
         for (int i = 0; i < 10000; i++) {
-            linkedListActual.add(i);
+            linkedListExpected.add(i);
         }
-        Assert.assertTrue(Part2.removeByIndex(linkedListActual, 3) > 30);
+        Assert.assertTrue(Part2.removeByIndex(linkedListExpected, 3) < 40);
     }
 
     @Test
     public void testArray_removeByIterator() {
-        List<Integer> listActual = new ArrayList<>();
+        List<Integer> listExpected = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {
-            listActual.add(i);
+            listExpected.add(i);
         }
-        Assert.assertTrue(Part2.removeByIterator(listActual, 3) < 10);
+        Assert.assertTrue(Part2.removeByIterator(listExpected, 3) < 20);
     }
 
     @Test
     public void testLinkedList_removeByIterator() {
-        List<Integer> linkedListActual = new LinkedList<>();
+        List<Integer> linkedListExpected = new LinkedList<>();
         for (int i = 0; i < 10000; i++) {
-            linkedListActual.add(i);
+            linkedListExpected.add(i);
         }
-        Assert.assertTrue(Part2.removeByIterator(linkedListActual, 3) < 10);
+        Assert.assertTrue(Part2.removeByIterator(linkedListExpected, 3) < 10);
     }
 }
