@@ -9,7 +9,7 @@ public class Demo {
 
 		System.out.println("~~~~~~~~~~~~Part6");
 
-		Part6.main(new String[] {"-i", PATH_TO_FILE, "-t", "frequency"});
+		Part6.main(new String[] {"-i", "part6.txt", "-t", "frequency"});
 		Part6.main(new String[] {"--input", PATH_TO_FILE, "--task", "length"});
 		Part6.main(new String[] {"--input", PATH_TO_FILE, "--task", "duplicates"});
 	}
