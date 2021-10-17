@@ -1,20 +1,9 @@
 package com.epam.rd.java.basic.practice6.part6;
 
-import java.util.Scanner;
-
 public class Part6 {
 
     public static void main(String[] args) {
-        StringBuilder input = new StringBuilder();
-        Scanner scanner = new Scanner(System.in);
-        String command = scanner.nextLine();
-        input.append(command).append(" ");
-        for (int i = 0; i < 3; i++) {
-            command = scanner.nextLine();
-            input.append(command).append(" ");
-        }
-        String[] text = input.toString().split(" ");
-        new Part6().inputFromConsole(text[0], new String[]{text[1]}, text[2], text[3]);
+        new Part6().inputFromConsole(args[0], new String[]{args[1]}, args[2], args[3]);
 
     }
 

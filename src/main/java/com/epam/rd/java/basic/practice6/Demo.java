@@ -1,29 +1,16 @@
 package com.epam.rd.java.basic.practice6;
 
 import com.epam.rd.java.basic.practice6.part6.Part6;
-import com.epam.rd.java.basic.practice6.part6.Part61;
-import com.epam.rd.java.basic.practice6.part6.Part62;
-import com.epam.rd.java.basic.practice6.part6.Part63;
-
-import java.io.ByteArrayInputStream;
-import java.nio.charset.StandardCharsets;
 
 public class Demo {
+	private static final String PATH_TO_FILE = "part6.txt";
 
 	public static void main(String[] args) {
 
 		System.out.println("~~~~~~~~~~~~Part6");
 
-		System.setIn(new ByteArrayInputStream("--input^part6.txt^--task^frequency".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
-		Part6.main(args);
-		System.setIn(new ByteArrayInputStream("--input^part6.txt^--task^length".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
-		Part6.main(args);
-		System.setIn(new ByteArrayInputStream("--input^part6.txt^--task^duplicates".replace("^", System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
-		Part6.main(args);
-
-
-		Part61.main(args);
-		Part62.main(args);
-		Part63.main(args);
+		Part6.main(new String[] {"-i", PATH_TO_FILE, "-t", "frequency"});
+		Part6.main(new String[] {"--input", PATH_TO_FILE, "--task", "length"});
+		Part6.main(new String[] {"--input", PATH_TO_FILE, "--task", "duplicates"});
 	}
 }
