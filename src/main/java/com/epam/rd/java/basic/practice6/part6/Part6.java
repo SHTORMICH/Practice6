@@ -14,11 +14,11 @@ public class Part6 {
             input.append(command).append(" ");
         }
         String[] text = input.toString().split(" ");
-        new Part6().inputFromConsole(text[0], text[1], text[2], text[3]);
+        new Part6().inputFromConsole(text[0], new String[]{text[1]}, text[2], text[3]);
 
     }
 
-    private boolean inputFromConsole(String input, String fileName, String task, String operation) {
+    private boolean inputFromConsole(String input, String[] fileName, String task, String operation) {
         if (!("--input".equals(input) || ("-i".equals(input)))) {
             System.err.println("Wrong input");
             return false;
@@ -29,13 +29,13 @@ public class Part6 {
         }
         switch (operation) {
             case "frequency":
-                new Part61(fileName);
+                Part61.main(fileName);
                 break;
             case "length":
-                new Part62(fileName);
+                Part62.main(fileName);
                 break;
             case "duplicates":
-                new Part63(fileName);
+                Part63.main(fileName);
                 break;
             default:
                 System.err.println("Wrong method!");
