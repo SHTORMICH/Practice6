@@ -2,9 +2,11 @@ package com.epam.rd.java.basic.practice6.part6;
 
 public class Part6 {
 
+    Part6() {
+    }
+
     public static void main(String[] args) {
         new Part6().inputFromConsole(args[0], new String[]{args[1]}, args[2], args[3]);
-
     }
 
     private boolean inputFromConsole(String input, String[] fileName, String task, String operation) {

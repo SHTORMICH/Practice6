@@ -467,15 +467,11 @@ In the Demo.main method, simulate the transfer of command line parameters to the
 
 System.out.println("~~~~~~~~~~~~Part6"); 
 
-Part6.main(new String[] {"--input", "part6.txt", "--task", 
-
-"frequency"}); 
+Part6.main(new String[] {"--input", "part6.txt", "--task", "frequency"}); 
 
 Part6.main(new String[] {"--input", "part6.txt", "--task", "length"}); 
 
-Part6.main(new String[] {"--input", "part6.txt", "--task", 
-
-"duplicates"});
+Part6.main(new String[] {"--input", "part6.txt", "--task", "duplicates"});
 
 ——————————————————
 
