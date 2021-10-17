@@ -6,11 +6,15 @@ public class Part3 {
         Parking parking = new Parking(4);
         parking.arrive(2);
         parking.arrive(2);
+        parking.print();
         parking.arrive(3);
+        parking.print();
         parking.arrive(2);
         parking.arrive(2);
+        parking.print();
         parking.depart(1);
         parking.depart(1);
+        parking.print();
 
     }
 

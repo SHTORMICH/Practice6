@@ -15,12 +15,10 @@ public class Parking {
          while (arr[k] != 0) {
              k = (k + 1) % arr.length;
              if (k == start) {
-                 System.out.println(printArr(arr) + ", false");
                  return false;
              }
          }
          arr[k] = 1;
-        System.out.println(printArr(arr) + ", true");
          return true;
     }
 
@@ -30,10 +28,8 @@ public class Parking {
         }
         if (arr[k] == 1) {
             arr[k] = 0;
-            System.out.println(printArr(arr) + ", true");
             return true;
         }
-        System.out.println(printArr(arr) + ", false");
         return false;
     }
     
@@ -43,13 +39,5 @@ public class Parking {
             text.append(el);
         }
         System.out.println(text);
-    }
-
-    public static String printArr(int[] arr) {
-        StringBuilder text = new StringBuilder();
-        for (int el : arr) {
-            text.append(el);
-        }
-        return text.toString();
     }
 }
